@@ -3,16 +3,14 @@
 const mongoose = require("mongoose");
 require("dotenv").config(); // Load environment variables
 
-const url = process.env.DB_URL; // Get DB_URL from .env file
+const DB_URL = process.env.DB_URL; // Get DB_URL from .env file
 
-if (!url) {
+if (!DB_URL) {
     console.error("Error: DB_URL is not defined in the .env file");
     process.exit(1); // Exit the application if the URL is missing
 }
 
-mongoose.connect(url, {
-    useNewUrlParser: true,
-   useUnifiedTopology: true,
+mongoose.connect(DB_URL, {
    tlsAllowInvalidCertificates: true
 });
 
