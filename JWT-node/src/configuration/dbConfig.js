@@ -11,7 +11,9 @@ if (!url) {
 }
 
 mongoose.connect(url, {
-    serverSelectionTimeoutMS: 5000
+    useNewUrlParser: true,
+   useUnifiedTopology: true,
+   tlsAllowInvalidCertificates: true
 });
 
 mongoose.connection.on("Connected", () => {
