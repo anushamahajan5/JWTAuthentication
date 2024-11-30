@@ -16,7 +16,7 @@ const Dashboard = () => {
 
     const fetchUsers = async () => {
       try {
-        const response = await fetch("https://jwtauthentication-6.onrender.com/", {
+        const response = await fetch("https://jwtauthentication-6.onrender.com/api/users", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
