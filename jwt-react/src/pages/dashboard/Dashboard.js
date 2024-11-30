@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Table, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-
+//replace the fetch url with http://localhost:5000/api/users if u are running on localhost
 const Dashboard = () => {
   const token = localStorage.getItem("token");
   const [users, setUsers] = useState([]);
@@ -16,7 +16,7 @@ const Dashboard = () => {
 
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/users", {
+        const response = await fetch("https://jwtauthentication-6.onrender.com/", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
