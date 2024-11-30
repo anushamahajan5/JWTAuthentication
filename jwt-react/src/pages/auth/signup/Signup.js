@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Signup.css';
 import { Button, Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
-
+//use http://localhost:5000/user/register fro localhost
 const Signup = () => {
     const navigate = useNavigate();
     const [formData, setformData] = useState({
@@ -22,7 +22,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const response = await fetch("http://localhost:5000/user/register",{
+            const response = await fetch("https://jwtauthentication-6.onrender.com/user/register",{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
